@@ -1,1 +1,7 @@
-<p>control-flow-example works!</p>
+<button (click)="users = []">Clear Users</button>
+
+@for (user of users; track $index) {
+<p>{{ user.name }} - {{ $index }}</p>
+} @empty {
+<p>No users found.</p>
+}

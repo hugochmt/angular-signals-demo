@@ -1,5 +1,8 @@
+<input type="text" [(ngModel)]="text" />
+<button (click)="changeUser()">Change user</button>
+
 <div style="display: flex; flex-direction: row; gap: 20px;">
-  <app-sub1></app-sub1>
+  <app-sub1 [user]="user"></app-sub1>
   <app-sub2></app-sub2>
 </div>
 <div>The current count is: {{ counterValue }}</div>

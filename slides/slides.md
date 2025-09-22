@@ -87,7 +87,8 @@ Variables disponibles : `$count` `$index` `$first` `$last` `$even` `$odd`
 
 > Un signal est un conteneur autour d'une valeur qui avertit les consommateurs intéressés lorsque cette valeur change. Les signaux peuvent contenir n'importe quelle valeur, des données primitives aux structures de données complexes.
 
-- Syntaxe :
+- But : Gestion plus fine des changements 👉 ne plus utiliser `zone.js` (cf. `provideZonelessChangeDetection`)
+
 
 ```typescript
 const count = signal(0);
@@ -108,6 +109,8 @@ const count = signal(0);
 const doubleCount = computed(() => count() * 2);
 ```
 
+<br>
+
 ### Effect
 
 ```typescript
@@ -115,6 +118,15 @@ effect(() => {
   console.log('Nouvelle valeur du compteur :', this.count());
 });
 ```
+
+---
+
+# Signalification
+
+- `input`
+- `output`
+- `model`
+- `forms` (experimental in v21)
 
 
 ---

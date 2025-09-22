@@ -1,5 +1,8 @@
-<div style="background: lightblue;">
+<div style="background: lightblue">
   <h3>Sub Component 1</h3>
-  <p>This is Sub Component 1</p>
+  @if (user) {
+  <p>Username from parent:</p>
+  <p>{{ user.name }}</p>
+  }
   <button (click)="increment()">Increment</button>
 </div>

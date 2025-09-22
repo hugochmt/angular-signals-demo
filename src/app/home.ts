@@ -9,7 +9,10 @@ import { RouterLink } from '@angular/router';
       <a routerLink="control-flow">Control Flow Example</a>
     </div>
     <div>
-      <a routerLink="signals">Signals Example</a>
+      <a routerLink="signals-counter">Signals Counter</a>
+    </div>
+    <div>
+      <a routerLink="signals-multi-component">Signals Multi Component</a>
     </div>
   `,
 })

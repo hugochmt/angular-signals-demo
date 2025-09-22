@@ -65,11 +65,9 @@ marp: true
 
 Variables disponibles : `$count` `$index` `$first` `$last` `$even` `$odd`
 
-`track` : Sert à optimiser le rendu, en indiquant à angular comment suivre les éléments de la collection.- (si un élément de la liste est modifier, pas besoin de redessiner tous les éléments)
+`track` : Sert à optimiser le rendu, en indiquant à angular comment suivre les éléments de la collection. (si un élément de la liste est modifié, pas besoin de redessiner tous les éléments)
 
----
-
-# `@let`
+`@let` : permet de déclarer des variables
 
 ---
 
@@ -83,8 +81,45 @@ Variables disponibles : `$count` `$index` `$first` `$last` `$even` `$odd`
 
 ---
 
----
-
 # Angular signals 🚦
 
+- Arrivée en Angular 16
+
+> Un signal est un conteneur autour d'une valeur qui avertit les consommateurs intéressés lorsque cette valeur change. Les signaux peuvent contenir n'importe quelle valeur, des données primitives aux structures de données complexes.
+
+- Syntaxe :
+
+```typescript
+const count = signal(0);
+```
+
+```html
+<div>{{ count() }}</div>
+```
+
 ---
+
+### Computed signals
+
+Permet d'avoir des valeurs dérivées de signals
+
+```typescript
+const count = signal(0);
+const doubleCount = computed(() => count() * 2);
+```
+
+### Effect
+
+```typescript
+effect(() => {
+  console.log('Nouvelle valeur du compteur :', this.count());
+});
+```
+
+
+---
+# Angular signals 🚦
+
+- Etat réactif simple & natif.
+- Gérer du state
+- Observables toujours utiles : events, asynchrone

@@ -1,4 +1,8 @@
+@let a = "Hello";
+
 <button (click)="users = []">Clear Users</button>
+
+{{ a }}
 
 @for (user of users; track $index) {
 <p>{{ user.name }} - {{ $index }}</p>

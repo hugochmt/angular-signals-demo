@@ -1,21 +1,16 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CounterService {
-  count = new BehaviorSubject(0);
+  count = signal(0);
 
   increment() {
-    this.count.next(this.count.value + 1);
+    this.count.update((val) => (val += 1));
   }
 
   decrement() {
-    this.count.next(this.count.value - 1);
-  }
-
-  getCount() {
-    return this.count;
+    this.count.update((val) => (val -= 1));
   }
 }

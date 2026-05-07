@@ -1,5 +1,6 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, computed, inject, input, Input } from '@angular/core';
 import { CounterService } from '../counter';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-sub1',
@@ -8,6 +9,10 @@ import { CounterService } from '../counter';
 })
 export class Sub1 {
   private counterService = inject(CounterService);
+
+  public userSignal = input<{ name: string } | null>();
+
+  public upperUser = computed(() => this.userSignal()?.name.toUpperCase());
 
   private _user!: { name: string };
 

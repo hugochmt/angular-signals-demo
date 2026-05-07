@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CounterService } from './counter';
 import { Sub1 } from './sub1/sub1';
@@ -10,16 +10,10 @@ import { Sub2 } from './sub2/sub2';
   templateUrl: './signal-multi-component.html',
 })
 export class SignalMultiComponent {
-  private counterService = inject(CounterService);
-  public counterValue: number = 0;
+  counter = inject(CounterService).count;
+  doubleCounter = computed(() => this.counter() * 3)
   public text: string = '';
   public user: { name: string } = { name: 'John' };
-
-  constructor() {
-    this.counterService.getCount().subscribe((value) => {
-      this.counterValue = value;
-    });
-  }
 
   changeUser() {
     if (this.text && this.text.trim()) {

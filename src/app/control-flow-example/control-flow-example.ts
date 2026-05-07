@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-control-flow-example',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './control-flow-example.html',
 })
 export class ControlFlowExample {

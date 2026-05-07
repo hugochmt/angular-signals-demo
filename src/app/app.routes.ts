@@ -3,6 +3,7 @@ import { ControlFlowExample } from './control-flow-example/control-flow-example'
 import { Home } from './home';
 import { SignalMultiComponent } from './signal-multi-component/signal-multi-component';
 import { SignalsCounter } from './signals-counter/signals-example';
+import { UserListComponent } from './examples/user-list';
 
 export const routes: Routes = [
   {
@@ -20,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'signals-multi-component',
     component: SignalMultiComponent,
+  },
+  {
+    path: 'user-list',
+    component: UserListComponent,
   }
 ];

@@ -126,7 +126,9 @@ effect(() => {
 - `input`
 - `output`
 - `model`
-- `forms` (experimental in v21)
+- `viewChild`
+...
+- `forms` (experimental in v21, stable in v22)
 
 
 ---

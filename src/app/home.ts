@@ -14,6 +14,9 @@ import { RouterLink } from '@angular/router';
     <div>
       <a routerLink="signals-multi-component">Signals Multi Component</a>
     </div>
+    <div>
+      <a routerLink="user-list">User List Example</a>
+    </div>
   `,
 })
 export class Home {}

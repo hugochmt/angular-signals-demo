@@ -17,6 +17,9 @@ import { RouterLink } from '@angular/router';
     <div>
       <a routerLink="user-list">User List Example</a>
     </div>
+    <div>
+      <a routerLink="signal-form">Signal Form</a>
+    </div>
   `,
 })
 export class Home {}

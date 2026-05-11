@@ -119,6 +119,9 @@ effect(() => {
 });
 ```
 
+
+
+
 ---
 
 # Signalification
@@ -128,8 +131,33 @@ effect(() => {
 - `model`
 - `viewChild`
 ...
-- `forms` (experimental in v21, stable in v22)
+- `forms` (developer preview in v18)
 
+
+---
+
+# Signal forms
+
+- Developer preview depuis Angular 18
+- Nouvelle API de formulaires basée sur les signals (`@angular/forms/signals`)
+- `[(ngModel)]` est maintenant basé sur les signals et standalone (via `FormsModule`)
+
+```html
+<!-- my-component.html -->
+<label>Username: <input [(ngModel)]="username" /></label>
+<p>Username value: {{ username() }}</p>
+<p>Validation errors: {{ username.errors() | json }}</p>
+```
+
+```typescript
+// my-component.ts
+@Component({...})
+export class MyComponent {
+  username = signal('', {
+    validators: [Validators.required, Validators.minLength(3)]
+  });
+}
+```
 
 ---
 # Angular signals 🚦

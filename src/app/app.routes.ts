@@ -4,6 +4,7 @@ import { Home } from './home';
 import { SignalMultiComponent } from './signal-multi-component/signal-multi-component';
 import { SignalsCounter } from './signals-counter/signals-example';
 import { UserListComponent } from './examples/user-list';
+import { SignalFormComponent } from './signal-form/signal-form';
 
 export const routes: Routes = [
   {
@@ -25,5 +26,9 @@ export const routes: Routes = [
   {
     path: 'user-list',
     component: UserListComponent,
+  },
+  {
+    path: 'signal-form',
+    component: SignalFormComponent,
   }
 ];
